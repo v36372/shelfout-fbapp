@@ -14,7 +14,7 @@ app.get('/', function(request, response) {
 });
 
 app.post('/fbredirect',function(request,response) {
-  respone.redirect('http://shelfout.com')
+  res.render('fbredirect.html');
 });
 
 app.listen(app.get('port'), function() {
