@@ -1,5 +1,8 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var app = express();
+app.use(bodyParser());
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -15,7 +18,7 @@ app.get('/', function(request, response) {
 });
 
 app.post('/fbredirect',function(request,response) {
-  response.render('fbredirect.html');
+  response.render('fbredirect.html',{ redir: request.body.fb_ref });
 });
 
 app.listen(app.get('port'), function() {
