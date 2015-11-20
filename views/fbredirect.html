@@ -1,6 +1,16 @@
-<script type=”text/javascript”>
-window.top.location.href = redir;
-console.log(redir);
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to open a new browser window.</p>
+
+<button onclick="myFunction(redir)">Try it</button>
+
+<script>
+function myFunction(redir) {
+    window.open(redir);
+}
 </script>
-<p>If you are not automatically redirected here is a link to <a target=”_blank” href=%= redir %>
-  <%= redir %></a>.  Opens in a new tab or window.</p>
+
+</body>
+</html>
