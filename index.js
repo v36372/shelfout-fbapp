@@ -17,8 +17,10 @@ app.get('/', function(request, response) {
   response.send("ok");
 });
 
-app.post('/fbredirect',function(request,response) {
-  response.render('fbredirect.html',{ redir: request.body.fb_ref });
+app.post('/fbredirect.html', function(req, res){
+    var link = request.body.fb_ref;
+    console.log(link);
+    res.render( 'fbredirect.html', { redir: request.body.fb_ref });
 });
 
 app.listen(app.get('port'), function() {
