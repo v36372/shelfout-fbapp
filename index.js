@@ -23,6 +23,10 @@ app.post('/fbredirect.html', function(req, res){
     res.render( 'fbredirect.html', { redir: req.body.fb_ref });
 });
 
+var redirect = function(){
+  console.log("123123123123");
+};
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
