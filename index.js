@@ -21,7 +21,7 @@ app.post('/fbredirect.html', function(req, res,next){
     var link = req.query.fb_ref;
     console.log(link);
     // res.render( 'fbredirect.html', { redir: link });
-    res.redirect(link,next);
+    res.redirect(next,link);
     // window.open(link, '_top');
     // res.send('ok');
 });
