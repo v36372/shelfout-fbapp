@@ -18,10 +18,8 @@ app.get('/', function(request, response) {
 });
 
 app.post('/fbredirect.html', function(req, res){
-    var link = req.param('fb_ref');
+    var link = req.query.fb_ref;
     console.log(link);
-    console.log(req.params.fb_ref);
-    console.log(req.query.fb_ref);
     res.render( 'fbredirect.html', { redir: link });
 });
 
