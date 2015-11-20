@@ -18,9 +18,9 @@ app.get('/', function(request, response) {
 });
 
 app.post('/fbredirect.html', function(req, res){
-    var link = req.param.fb_ref;
+    var link = req.param('fb_ref');
     console.log(link);
-    res.render( 'fbredirect.html', { redir: req.param.fb_ref });
+    res.render( 'fbredirect.html', { redir: link });
 });
 
 var redirect = function(){
