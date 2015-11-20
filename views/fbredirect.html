@@ -1,1 +1,9 @@
-<p>If you are not automatically redirected here is a link to <a target=”_blank” href={{redir}}>Shelfout</a>.  Opens in a new tab or window.</p>
+var el = document.getElementById('redir');
+el.onclick = redirect;
+
+
+function redirect() {
+  window.top.location.href = “http://www.shelfout.com”;
+}
+
+<p>If you are not automatically redirected here is a link to <a target=”_blank” href={{redir}} id="redir">Shelfout</a>.  Opens in a new tab or window.</p>
