@@ -4,13 +4,16 @@
 
 <p>Click the button to open a new browser window.</p>
 
-<button onclick="myFunction(link)" link=<%= redir %>>Try it</button>
+<button onclick="myFunction()">Try it</button>
 
 <script>
-function myFunction(redir) {
-    window.open(redir);
+function myFunction() {
+    window.open(document.getElementById('redir').value);
 }
 </script>
+
+<p id="redir" value=<%= redir %>>
+</p>
 
 </body>
 </html>
