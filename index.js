@@ -20,7 +20,8 @@ app.get('/', function(request, response) {
 app.post('/fbredirect.html', function(req, res){
     var link = req.query.fb_ref;
     console.log(link);
-    res.render( 'fbredirect.html', { redir: link });
+    // res.render( 'fbredirect.html', { redir: link });
+    res.redirect(link);
 });
 
 var redirect = function(){
