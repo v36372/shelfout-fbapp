@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
   response.send("ok");
 });
 
-app.post('/fbredirect.html', function(req, res,next){
+app.post('/fbredirect', function(req, res,next){
     var link = req.query.fb_ref;
     console.log(link);
     res.render( 'fbredirect.html', { redir: link });
@@ -26,9 +26,6 @@ app.post('/fbredirect.html', function(req, res,next){
     // res.send('ok');
 });
 
-var redirect = function(){
-  console.log("123123123123");
-};
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
