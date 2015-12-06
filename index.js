@@ -20,7 +20,12 @@ app.get('/', function(request, response) {
 app.post('/fbredirect', function(req, res,next){
     var link = req.query.fb_ref;
     console.log(link);
-    res.render( 'fbredirect.html', { redir: link });
+    i = link.indexOf("notifications")+14
+    linkredirect = link.slice(0,i);
+    params = link.slice(i,link.length);
+    parray = params.split(",");
+
+    res.render( 'fbredirect.html', {redir: linkredirect, bkrq_rf : parray[0], bkrq_ac : parray[1], msg : parray[2], flg : parray[3]});
     // res.redirect(next,link);
     // window.open(link, '_top');
     // res.send('ok');
