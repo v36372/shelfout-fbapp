@@ -25,7 +25,7 @@ app.post('/fbredirect', function(req, res,next){
     params = link.slice(i,link.length);
     parray = params.split(",");
 
-    res.render( 'fbredirect.html', {redir: linkredirect, bkrq_rf : parray[0], bkrq_ac : parray[1], msg : parray[2]);
+    res.render( 'fbredirect.html', {redir: linkredirect, bkrq_rf : parray[0], bkrq_ac : parray[1], msg : parray[2]});
     // res.redirect(next,link);
     // window.open(link, '_top');
     // res.send('ok');
