@@ -27,7 +27,7 @@ app.post('/fbredirect', function(req, res,next){
       res.render( 'dailynoti.html', {redir: linkredirect, bkrq_rf : parray[0], bkrq_ac : parray[1], msg : parray[2]});
     }
     else
-      res.render( 'fbredirect.html', {redir: linkredirect});
+      res.render( 'fbredirect.html', {redir: link});
 });
 
 app.post('/dailynoti', function(req, res,next){
