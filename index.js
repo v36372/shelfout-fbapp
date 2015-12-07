@@ -19,18 +19,28 @@ app.get('/', function(request, response) {
 
 app.post('/fbredirect', function(req, res,next){
     var link = req.query.fb_ref;
+    if(link.indexOf("dailynoti") != -1){
+      i = link.indexOf("notifications")+14
+      linkredirect = link.slice(link.indexOf("http"),i);
+      params = link.slice(i,link.length);
+      parray = params.split(",");
+      res.render( 'dailynoti.html', {redir: linkredirect, bkrq_rf : parray[0], bkrq_ac : parray[1], msg : parray[2]});
+    }
+    else
+      res.render( 'fbredirect.html', {redir: linkredirect});
+});
+
+app.post('/dailynoti', function(req, res,next){
+    var link = req.query.fb_ref;
     console.log(link);
     i = link.indexOf("notifications")+14
     linkredirect = link.slice(0,i);
     params = link.slice(i,link.length);
     parray = params.split(",");
-
-    res.render( 'fbredirect.html', {redir: linkredirect, bkrq_rf : parray[0], bkrq_ac : parray[1], msg : parray[2]});
     // res.redirect(next,link);
     // window.open(link, '_top');
     // res.send('ok');
 });
-
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
