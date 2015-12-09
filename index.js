@@ -25,6 +25,7 @@ app.post('/fbredirect', function(req, res,next){
       params = link.slice(i,link.length);
       parray = params.split(",");
       rspStr = ""
+      console.log(parray[0])
       if(parray[0] != "0"){
         rspStr += "Bạn có " + parray[0] + " yêu cầu mượn sách bị từ chối\n"
       }
