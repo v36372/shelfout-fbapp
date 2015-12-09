@@ -26,7 +26,7 @@ app.post('/fbredirect', function(req, res,next){
       parray = params.split(",");
       rspStr = ""
       if(parray[0] != "0"){
-        rspStr += "Bạn có " + parray[0] + " yêu cầu mượn sách bị từ chối \n"
+        rspStr += "Bạn có " + parray[0] + " yêu cầu mượn sách bị từ chối" + '%0A'
       }
       if(parray[1] != "0"){
         rspStr += "Bạn có " + parray[1] + " yêu cầu mượn sách được đồng ý\
