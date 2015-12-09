@@ -26,13 +26,16 @@ app.post('/fbredirect', function(req, res,next){
       parray = params.split(",");
       rspStr = ""
       if(parray[0] != "0"){
-        rspStr += "Bạn có " + parray[0] + " yêu cầu mượn sách bị từ chối" + "<br>"
+        rspStr += "Bạn có " + parray[0] + " yêu cầu mượn sách bị từ chối\
+        "
       }
       if(parray[1] != "0"){
-        rspStr += "Bạn có " + parray[1] + " yêu cầu mượn sách được đồng ý" + "<br>"
+        rspStr += "Bạn có " + parray[1] + " yêu cầu mượn sách được đồng ý\
+        "
       }
       if(parray[2] != "0"){
-        rspStr += "Bạn có " + parray[2] + " tin nhắn mới" + "<br>"
+        rspStr += "Bạn có " + parray[2] + " tin nhắn mới\
+        "
       }
       res.render( 'dailynoti.html', {redir: linkredirect, str:rspStr});
     }
